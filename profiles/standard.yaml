@@ -1,0 +1,3 @@
+name: standard
+notes: Standard OpenFOAM utilities from the selected environment.
+required_executables: [foamDictionary]

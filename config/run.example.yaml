@@ -1,0 +1,32 @@
+study:
+  name: mock-smoke
+sources:
+  - name: mock-local
+    type: local
+    path: examples/mock-source
+openfoam:
+  environment: mock
+  environments:
+    mock:
+      type: mock
+execution:
+  total_cores: 2
+  max_parallel_cases: 2
+  cores_per_case: 1
+  max_walltime: '00:00:30'
+  on_failure: continue
+  cleanup:
+    completed_cases: keep
+    failed_cases: keep
+archiving:
+  enabled: true
+  include: [dictionaries, logs, extracted_results]
+benchmarks:
+  - id: mock-benchmark
+    source: mock-local
+    path: mock-benchmark
+    solver: mockSolver
+    enabled: true
+    sweep:
+      parameters:
+        end_time: ['0.1', '0.2']

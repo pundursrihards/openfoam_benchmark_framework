@@ -1,0 +1,10 @@
+id: mock-benchmark
+template: template
+profile: mock
+parameters:
+  end_time:
+    file: system/controlDict
+    entry: endTime
+steps:
+  - name: solve
+    command: 'python3 -c "from pathlib import Path; Path(\"postProcessing\").mkdir(exist_ok=True); Path(\"postProcessing/summary.csv\").write_text(\"value\\n42\\n\")"'

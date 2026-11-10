@@ -1,0 +1,7 @@
+name: twophaseflow
+notes: >-
+  TwoPhaseFlow must be separately built for the selected OpenCFD OpenFOAM release.
+  Not compatible with OpenFOAM Foundation releases. The appropriate upstream
+  branch, utilities and additional libraries must already be installed.
+required_executables: [foamDictionary, initAlphaField]
+required_libraries: []
